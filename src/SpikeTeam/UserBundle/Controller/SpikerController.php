@@ -139,7 +139,8 @@ class SpikerController extends Controller
         $form = $this->createForm(new SpikerType(), $newSpiker)
                      ->remove('isSupervisor')
                      ->remove('isEnabled')
-                     ->remove('isCaptain');
+                     ->remove('isCaptain')
+                     ->remove('cohort');
 
         $form->handleRequest($request);
 
