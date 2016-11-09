@@ -25,6 +25,12 @@
             <select {% if currentGroup.getCaptain() %}class="{{ currentGroup.getCaptain().preferredTime }}"{% endif %}>
                 <option value="all">All</option>
                 <option value="{{ currentGroup.id }}" selected="selected">{{ currentGroup.name }}</option>
+                <option disabled="disabled" role="separator">——————</option>
+                {% for key, name in weekdayNames %}
+                    {% if key != currentGroup.id %}
+                    <option value="{{ key }}">{{ name }}</option>
+                    {% endif %}
+                {% endfor %}
             </select>
         </div>
         <div class="latest">

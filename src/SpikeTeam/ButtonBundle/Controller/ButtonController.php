@@ -40,12 +40,23 @@ class ButtonController extends Controller
             $canPush = false;
         }
 
+        $weekdayNames = array(
+            1 => 'Sunday',
+            2 => 'Monday',
+            3 => 'Tuesday',
+            4 => 'Wednesday',
+            5 => 'Thursday',
+            6 => 'Friday',
+            7 => 'Saturday'
+        );
+
         return $this->render('SpikeTeamButtonBundle:Button:index.html.twig', array(
             'goUrl'         => $this->generateUrl('goteamgo', array('gid' => $currentGroup)),
             'canPush'       => $canPush,
             'message'       => $message,
             'mostRecent'    => $mostRecent,
-            'currentGroup'  => $currentGroup
+            'currentGroup'  => $currentGroup,
+            'weekdayNames'  => $weekdayNames
         ));
     }
 
